@@ -34,7 +34,7 @@ module.exports = {
       },
       landing: {
         allowNull: true,
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
       },
       launch: {
         allowNull: true,
