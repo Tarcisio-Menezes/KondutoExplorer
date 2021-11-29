@@ -10,7 +10,7 @@ module.exports = {
         launch: '2011/11/26',
         published: new Date('2011-08-01T19:58:00.000Z'),
         updated: new Date('2011-08-01T19:58:00.000Z'),
-        userId: 1,
+        user_id: 1,
       },
       {
         id: 2,
@@ -21,7 +21,7 @@ module.exports = {
         launch: '2011/11/26',
         published: new Date('2011-09-01T19:58:00.000Z'),
         updated: new Date('2011-10-01T19:58:00.000Z'),
-        userId: 2,
+        user_id: 2,
       },
       ], { timestamps: false });
   },
