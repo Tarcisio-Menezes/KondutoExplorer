@@ -10,7 +10,7 @@ module.exports = {
       },
       {
         id: 2,
-        display_name: 'Michael Schumacher',
+        name: 'Michael Schumacher',
         email: 'MichaelSchumacher@gmail.com',
         password: 'konduto',
         image: 'https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg',
