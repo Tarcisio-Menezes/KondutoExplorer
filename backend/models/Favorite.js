@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     camera: DataTypes.STRING,
     landing: DataTypes.STRING,
     launch: DataTypes.STRING,
-    createdAt: DataTypes.STRING,
-    updatedAt: DataTypes.STRING,
+    published: DataTypes.STRING,
+    updated: DataTypes.STRING,
     userId: { type: DataTypes.INTEGER, foreignKey: true },
   },
   { timestamps: false, tableName: 'Users', underscored: true });

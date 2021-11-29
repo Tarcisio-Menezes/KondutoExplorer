@@ -8,8 +8,8 @@ module.exports = {
         camera: 'FHAZ',
         landing: '2012/08/06',
         launch: '2011/11/26',
-        createdAt: new Date('2011-08-01T19:58:00.000Z'),
-        updatedAt: new Date('2011-08-01T19:58:00.000Z'),
+        published: new Date('2011-08-01T19:58:00.000Z'),
+        updated: new Date('2011-08-01T19:58:00.000Z'),
         userId: 1,
       },
       {
@@ -19,8 +19,8 @@ module.exports = {
         camera: 'FHAZ',
         landing: '2012/08/06',
         launch: '2011/11/26',
-        createdAt: new Date('2011-09-01T19:58:00.000Z'),
-        updatedAt: new Date('2011-10-01T19:58:00.000Z'),
+        published: new Date('2011-09-01T19:58:00.000Z'),
+        updated: new Date('2011-10-01T19:58:00.000Z'),
         userId: 2,
       },
       ], { timestamps: false });
