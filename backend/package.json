@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "KondutoExplorer proporciona uma viagem ao planeta vermelho, sem sair da cadeira, para todos os konduters cadastrados",
-  "main": "./api/app.js",
+  "main": "./api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
