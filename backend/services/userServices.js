@@ -8,7 +8,7 @@ const {
   isValidUser,
 } = require('../utils/validations');
 
-const userRegister = async ({ displayName, email, password, image }) => {
+const userRegister = async ({ name, email, password, image }) => {
   if (await existingUser(email) !== null) {
     return { error: { code: 'conflict' } };
   }
@@ -18,10 +18,10 @@ const userRegister = async ({ displayName, email, password, image }) => {
   if (!validPass(password)) {
     return { error: { code: 'invalidPass' } };
   }
-  if (!validName(displayName)) {
+  if (!validName(name)) {
     return { error: { code: 'invalidName' } };
   }
-  await User.create({ displayName, email, password, image });
+  await User.create({ name, email, password, image });
   return {
     token: tokenGenerator(email, password),
   };

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   { timestamps: false, tableName: 'Users', underscored: true });
 
   Favorite.associate = (models) => {
-    Favorite.hasMany(models.User,
+    Favorite.belongsTo(models.User,
       { foreignKey: 'userId', as: 'user', through: Favorite });
   };
 
