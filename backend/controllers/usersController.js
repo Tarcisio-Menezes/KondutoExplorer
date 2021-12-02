@@ -14,8 +14,6 @@ const userRegister = rescue(async (req, res, next) => {
 
   const { name, email, password, image } = req.body;
 
-  console.log(name);
-
   const result = await service.userRegister({ name, email, password, image });
   if (result.error) return next(result.error);
   return res.status(201).json(result);
