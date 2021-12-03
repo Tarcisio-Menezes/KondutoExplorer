@@ -49,6 +49,12 @@ const isValidUser = async (email) => {
   } return validUser;
 };
 
+const validLogin = async (email, password) => {
+  const user = await existingUser(email);
+  if (user && user.password === password) return true;
+  return false;
+};
+
 module.exports = {
   validEmail,
   validName,
@@ -56,4 +62,5 @@ module.exports = {
   tokenGenerator,
   existingUser,
   isValidUser,
+  validLogin,
 };
