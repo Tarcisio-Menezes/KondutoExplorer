@@ -3,9 +3,10 @@ const { isValidUser } = require('../utils/validations');
 
 const favoriteRegister = async (favorite, userEmail) => {
   const { imagePath, rover, camera, landing, launch,
-    published, updated, userId } = favorite;
+    published, updated } = favorite;
 
     const result = await isValidUser(userEmail);
+    const { id } = result;
     if (!result.error) {
       return Favorite.create({ 
         imagePath,
@@ -13,7 +14,7 @@ const favoriteRegister = async (favorite, userEmail) => {
         camera, 
         landing, 
         launch, 
-        userId, 
+        userId: id, 
         published,
         updated });
     } return result;
@@ -39,9 +40,12 @@ const getFavoriteById = async (id) => {
     return result;
 };
 
-const updateFavorite = async (favorite) => {
+const updateFavorite = async (favorite, email) => {
+  const user = await isValidUser(email);
+  const userId = user.id;
+
   const { imagePath, rover, camera, landing, launch,
-    published, updated, userId, id } = favorite;
+    published, updated, id } = favorite;
 
     await Favorite.update({ 
       imagePath,
