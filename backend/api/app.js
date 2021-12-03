@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const usersRoutes = require('../routes/usersRoute');
 const usersMiddleware = require('../middlewares/usersMiddleware');
 const favoriteRoutes = require('../routes/favoritesRoute');
@@ -9,6 +10,9 @@ const loginMiddleware = require('../middlewares/loginMiddleware');
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.use(usersRoutes);
 app.use(usersMiddleware);
