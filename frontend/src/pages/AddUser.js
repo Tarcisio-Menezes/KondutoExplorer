@@ -71,16 +71,14 @@ function AddUser() {
             onChange={ ({ target }) => setUserPass(target.value) }
           />
         </Form.Group>
-        <Link to="/home">
-          <button
-            variant="light"
-            type="submit"
-            onClick={ () => createUser(userName, userEmail, userPass) }
-            disabled={ !userName || !userEmail || !userPass }
-          >
-            Entrar
-          </button>
-        </Link>
+        <button
+          variant="light"
+          type="submit"
+          onClick={ () => createUser(userName, userEmail, userPass) }
+          disabled={ !userName || !userEmail || !userPass }
+        >
+          Cadastrar
+        </button>
         <Link to="/">
           <button
             variant="light"
