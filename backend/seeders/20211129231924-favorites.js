@@ -3,7 +3,7 @@ module.exports = {
     await queryInterface.bulkInsert('Favorites',
       [{
         id: 1,
-        imagePath: 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG',
+        image_path: 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG',
         rover: 'Curiosity',
         camera: 'FHAZ',
         landing: '2012/08/06',
@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         id: 2,
-        imagePath: 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG',
+        image_path: 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG',
         rover: 'Curiosity',
         camera: 'FHAZ',
         landing: '2012/08/06',

@@ -2,9 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "KondutoExplorer proporciona uma viagem ao planeta vermelho, sem sair da cadeira, para todos os konduters cadastrados",
-  "main": "index.js",
+  "main": "./api/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "debug": "nodemon ."
   },
   "keywords": [
     "Node.js",
@@ -16,8 +18,11 @@
   "author": "Tarcísio Menezes",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "eslint-config-trybe-backend": "^1.0.4",
     "express": "^4.17.1",
+    "express-rescue": "^1.1.31",
+    "joi": "^17.5.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.12.0-alpha.1",
