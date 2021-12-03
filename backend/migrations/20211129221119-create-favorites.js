@@ -23,6 +23,7 @@ module.exports = {
       imagePath: {
         allowNull: false,
         type: Sequelize.STRING,
+        field: "image_path"
       },
       rover: {
         allowNull: false,

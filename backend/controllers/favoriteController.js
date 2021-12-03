@@ -9,8 +9,6 @@ const favoriteRegister = rescue(async (req, res, next) => {
     camera: joi.string().required(),
     landing: joi.string().required(),
     launch: joi.string().required(),
-    published: joi.string().required(),
-    updated: joi.string().required(),
   }).validate(req.body);
 
   if (error) return next(error);
@@ -27,7 +25,7 @@ const favoriteRegister = rescue(async (req, res, next) => {
 });
 
 const getAllFavorites = rescue(async (_req, res, _next) => {
-  const result = await service.getAllFavorite();
+  const result = await service.getAllFavorites();
   return res.status(200).json(result);
 });
 
@@ -45,17 +43,14 @@ const updateFavorite = rescue(async (req, res, next) => {
     camera: joi.string().required(),
     landing: joi.string().required(),
     launch: joi.string().required(),
-    published: joi.string().required(),
-    updated: joi.string().required(),
   }).validate(req.body);
 
   if (error) return next(error);
 
   const { id } = req.params;
-  const { imagePath, rover, camera, landing, launch,
-    published, updated } = req.body;
+  const { imagePath, rover, camera, landing, launch } = req.body;
   
-  const favorite = { imagePath, rover, camera, landing, launch, published, updated, id };
+  const favorite = { imagePath, rover, camera, landing, launch, id };
   const { email } = req.user;
   const result = await service.updateFavorite(favorite, email);
   if (result.error) return next(result.error);
@@ -64,7 +59,8 @@ const updateFavorite = rescue(async (req, res, next) => {
 
 const removeFavorite = rescue(async (req, res, next) => {
   const { id } = req.params;
-  const result = await service.removeFavorite(id);
+  const { email } = req.user;
+  const result = await service.removeFavorite(id, email);
   if (result.error) return next(result.error);
   return res.status(204).send();
 });

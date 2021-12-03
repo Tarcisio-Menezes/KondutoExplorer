@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     updated: DataTypes.STRING,
     userId: { type: DataTypes.INTEGER, foreignKey: true },
   },
-  { timestamps: false, tableName: 'Users', underscored: true });
+  { timestamps: false, tableName: 'Favorites', underscored: true });
 
   Favorite.associate = (models) => {
     Favorite.belongsTo(models.User,

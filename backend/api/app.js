@@ -1,12 +1,17 @@
 const express = require('express');
-const usersRouter = require('../routes/usersRoute');
+const usersRoutes = require('../routes/usersRoute');
 const usersMiddleware = require('../middlewares/usersMiddleware');
+const favoriteRoutes = require('../routes/favoritesRoute');
+const favoriteMiddleware = require('../middlewares/favoriteMiddleware');
 
 const app = express();
 
 app.use(express.json());
 
-app.use(usersRouter);
+app.use(usersRoutes);
 app.use(usersMiddleware);
+
+app.use(favoriteRoutes);
+app.use(favoriteMiddleware);
 
 module.exports = app;
