@@ -6,7 +6,6 @@ const Provider = ({ children }) => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPass, setUserPass] = useState('');
-  const [registerUser, setRegisterUser] = useState('');
   const [token, setToken] = useState('');
   const [favorites, setFavorites] = useState('');
 
@@ -17,12 +16,10 @@ const Provider = ({ children }) => {
     setUserPass,
     token,
     setToken,
-    registerUser,
-    setRegisterUser,
     favorites,
     setFavorites,
     userEmail,
-    setUserEmail
+    setUserEmail,
   };
 
   return (

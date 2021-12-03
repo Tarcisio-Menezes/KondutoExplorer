@@ -19,10 +19,10 @@ function Login() {
     setToken,
   } = useContext(MainContext);
 
-  const userLogin = (userEmail, pass) => {
+  const userLogin = (email, password) => {
     const body = {
-      email: userEmail,
-      password: pass,
+      email,
+      password,
     };
 
     const headers = {

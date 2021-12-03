@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Form } from 'react-bootstrap';
@@ -11,21 +11,16 @@ require('dotenv').config();
 const host = process.env.HOST || 'localhost';
 
 function AddUser() {
-  const {
-    userName,
-    setUserName,
-    userEmail,
-    setUserEmail,
-    userPass,
-    setUserPass,
-    setToken
-  } = useContext(MainContext);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPass, setUserPass] = useState('');
+  const { setToken } = useContext(MainContext);
 
-  const createUser = (userName, userEmail, pass) => {
+  const createUser = (name, email, password) => {
     const body = {
-      name: userName,
-      email: userEmail,
-      password: pass,
+      name,
+      email,
+      password,
     };
 
     const headers = {
@@ -52,13 +47,13 @@ function AddUser() {
         <h4>Cadastrar nova pessoa exploradora</h4>
       </section>
       <section className="createData">
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Nome</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Seu nome deve ter ao menos oito caracteres."
-          onChange={ ({ target }) => setUserName(target.value) }
-        />
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Nome</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Seu nome deve ter ao menos oito caracteres."
+            onChange={ ({ target }) => setUserName(target.value) }
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
@@ -81,9 +76,17 @@ function AddUser() {
             variant="light"
             type="submit"
             onClick={ () => createUser(userName, userEmail, userPass) }
-            disabled={ !userEmail || !userPass }
+            disabled={ !userName || !userEmail || !userPass }
           >
             Entrar
+          </button>
+        </Link>
+        <Link to="/">
+          <button
+            variant="light"
+            type="submit"
+          >
+            Voltar para Login
           </button>
         </Link>
       </section>
