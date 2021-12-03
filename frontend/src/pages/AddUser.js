@@ -18,7 +18,7 @@ function AddUser() {
     setUserEmail,
     userPass,
     setUserPass,
-    setRegisterUser,
+    setToken
   } = useContext(MainContext);
 
   const createUser = (userName, userEmail, pass) => {
@@ -36,7 +36,7 @@ function AddUser() {
     axios.post(`http://${host}:3003/user`, body, { headers })
       .then((response) => {
         if (response.data.token) {
-          setRegisterUser(response.data.token);
+          setToken(response.data.token);
           return alert(`O usuário ${userEmail} foi cadastrado com sucesso!`);
         }
       })
@@ -76,20 +76,14 @@ function AddUser() {
             onChange={ ({ target }) => setUserPass(target.value) }
           />
         </Form.Group>
-        <button
-          variant="light"
-          type="submit"
-          onClick={ () => createUser(userName, userEmail, userPass) }
-          disabled={ !userEmail || !userPass }
-        >
-          Cadastrar
-        </button>
-        <Link to="/">
+        <Link to="/home">
           <button
             variant="light"
             type="submit"
+            onClick={ () => createUser(userName, userEmail, userPass) }
+            disabled={ !userEmail || !userPass }
           >
-            Voltar para Login
+            Entrar
           </button>
         </Link>
       </section>
