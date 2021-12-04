@@ -43,7 +43,7 @@ function Favorites() {
   };
 
   const listOfFavorites = () => {
-    if (loading || !favorites) return <h4>Carregando</h4>;
+    if (loading || !favorites) return <h4>Carregando...</h4>;
     return (
       <div>
         <Nav />

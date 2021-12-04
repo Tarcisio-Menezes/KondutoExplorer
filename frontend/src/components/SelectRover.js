@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import MainContext from '../context/MainContext';
 
 function SelectRover() {
@@ -8,6 +9,9 @@ function SelectRover() {
     return (
       <div>
         <h3>Desculpe konduter, você não está autenticado em nosso sistema :(</h3>
+        <Link to="/">
+          <p>Venha fazer login!</p>
+        </Link>
       </div>
     );
   } return (

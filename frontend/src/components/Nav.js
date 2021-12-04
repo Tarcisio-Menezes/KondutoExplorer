@@ -15,7 +15,7 @@ function Nav() {
       </nav>
       <nav className="favoriteLink">
         <Link to="/favorites">
-          Favorite
+          Favoritos
         </Link>
       </nav>
       <nav className="exitLink">
