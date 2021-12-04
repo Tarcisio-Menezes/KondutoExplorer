@@ -1,13 +1,15 @@
 /* eslint-disable react/void-dom-elements-no-children */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form } from 'react-bootstrap';
+import MainContext from '../context/MainContext';
 // import axios from 'axios';
 // import MainContext from '../context/MainContext';
 import { getDatesAndPhotos } from '../utils/requestAPI';
+import SelectRover from '../components/SelectRover';
 
 function Home() {
   // const { userName, token, setFavorites } = useContext(MainContext);
-  const [rover, setRover] = useState('');
+  const { rover } = useContext(MainContext);
   const [dataRover, setDataRover] = useState('');
   const [day, setDay] = useState(1);
   const [page, setPage] = useState(1);
@@ -29,48 +31,6 @@ function Home() {
     }
     getAllDataInSelectedDay();
   }, [day, page, rover]);
-
-  const selectRover = () => (
-    <section>
-      <p>Selecione o um rover para explorar:</p>
-      <div>
-        <label htmlFor="curiosity">
-          <input
-            type="radio"
-            id="curiosity"
-            name="rover"
-            value="curiosity"
-            onChange={ ({ target }) => setRover(target.value) }
-          />
-          Curiosity
-        </label>
-      </div>
-      <div>
-        <label htmlFor="opportunity">
-          <input
-            type="radio"
-            id="opportunity"
-            name="rover"
-            value="opportunity"
-            onChange={ ({ target }) => setRover(target.value) }
-          />
-          Opportunity
-        </label>
-      </div>
-      <div>
-        <label htmlFor="spirit">
-          <input
-            type="radio"
-            id="spirit"
-            name="rover"
-            value="spirit"
-            onChange={ ({ target }) => setRover(target.value) }
-          />
-          Spirit
-        </label>
-      </div>
-    </section>
-  );
 
   const infosSelectedRover = () => {
     if (dataRover) {
@@ -129,7 +89,7 @@ function Home() {
   return (
     <div>
       Hello home
-      { selectRover() }
+      <SelectRover />
       { infosSelectedRover() }
       { viewDatesAndPhotos() }
     </div>

@@ -7,6 +7,7 @@ const Provider = ({ children }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPass, setUserPass] = useState('');
   const [token, setToken] = useState('');
+  const [rover, setRover] = useState('');
   const [favorites, setFavorites] = useState('');
 
   const context = {
@@ -20,6 +21,8 @@ const Provider = ({ children }) => {
     setFavorites,
     userEmail,
     setUserEmail,
+    rover,
+    setRover,
   };
 
   return (
