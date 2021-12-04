@@ -7,6 +7,8 @@ section.titlesLogin {
 
 section.titlesLogin h1, h4 {
   align-self: center;
+  color: rgb(106,57,218);
+  font-family: inherit;
 }
 
 section.dataLogin  {
@@ -22,4 +24,6 @@ section.dataLogin  {
 
 div.register p, a {
   align-self: center;
+  color: rgb(106,57,218);
+  font-family: inherit;
 }
