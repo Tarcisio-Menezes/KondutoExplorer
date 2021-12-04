@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Card } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 
 function ViewDatesAndPhotos() {
   const { setDay, setPage, dataRover } = useContext(MainContext);
 
   if (dataRover) {
+    const { photos } = dataRover;
     return (
       <div>
         <h3>Konduter, agora vamos explorar ainda mais</h3>
@@ -32,6 +33,45 @@ function ViewDatesAndPhotos() {
             onChange={ ({ target }) => setPage(target.value) }
           />
         </Form.Group>
+        <section className="homeTasks">
+          { photos && photos.map((photo, index) => (
+            <Card
+              className="homeCard"
+              style={ { width: '18rem' } }
+              key={ index }
+            >
+              <a
+                href={ photo.img_src }
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Card.Img variant="top" src={ photo.img_src } />
+              </a>
+              <Card.Body>
+                <Card.Title>
+                  { photo.rover.name }
+                </Card.Title>
+                <Card.Subtitle
+                  className="mb-2 text-muted"
+                >
+                  { photo.camera.full_name }
+                </Card.Subtitle>
+                <Card.Subtitle
+                  className="mb-2 text-muted"
+                >
+                  Data da captura:
+                  {' '}
+                  { photo.earth_date }
+                </Card.Subtitle>
+                <Card.Text>
+                  Status do rover:
+                  {' '}
+                  { photo.rover.status }
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </section>
       </div>
     );
   } return null;

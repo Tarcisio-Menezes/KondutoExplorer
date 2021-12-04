@@ -22,7 +22,6 @@ function Home() {
       if (rover) {
         const data = await getDatesAndPhotos(rover, day, page);
         console.log(data);
-        console.log(rover);
         return setDataRover(data);
       }
     }
