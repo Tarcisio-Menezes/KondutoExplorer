@@ -5,6 +5,7 @@ import { getDatesAndPhotos } from '../utils/requestAPI';
 import SelectRover from '../components/SelectRover';
 import InfosSelectedRover from '../components/InfosSelectedRover';
 import ViewDatesAndPhotos from '../components/ViewDatesAndPhotos';
+import Nav from '../components/Nav';
 
 function Home() {
   const { rover, day, page, setDataRover } = useContext(MainContext);
@@ -21,6 +22,7 @@ function Home() {
 
   return (
     <div>
+      <Nav />
       <SelectRover />
       <InfosSelectedRover />
       <ViewDatesAndPhotos />
