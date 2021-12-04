@@ -84,7 +84,7 @@ function ViewDatesAndPhotos() {
             onChange={ ({ target }) => setPage(target.value) }
           />
         </Form.Group>
-        <section className="homeTasks">
+        <section className="homePhotos">
           { photos && photos.map((photo, index) => (
             <Card
               className="homeCard"

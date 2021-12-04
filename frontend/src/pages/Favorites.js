@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
-// import { Form, Card, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 
 require('dotenv').config();
@@ -8,33 +8,83 @@ require('dotenv').config();
 const host = process.env.HOST || 'localhost';
 
 function Favorites() {
-  const { token } = useContext(MainContext);
-
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    authorization: token,
-  };
-
-  const gettAllFavorites = () => {
-    axios.get(`http://${host}:3003/favorite`, body, { headers })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((errorOrResponse) => console.log(errorOrResponse));
-  };
+  const { token, setFavorites, userEmail, favorites } = useContext(MainContext);
 
   useEffect(() => {
-    async function getAllFavorites() {
-      const data = await gettAllFavorites();
-      return console.log(data);
+    async function getFavorites() {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        authorization: token,
+      };
+      axios.get(`http://${host}:3003/favorite`, { headers })
+        .then((response) => {
+          if (response.data) return setFavorites(response.data);
+        })
+        .catch((errorOrResponse) => console.log(errorOrResponse));
     }
-    getAllFavorites();
-  }, []);
+    getFavorites();
+  }, [setFavorites, token]);
 
   return (
     <div>
-      Olá favorites!
+      <h1>Observatório Konduto</h1>
+      <h3>
+        Olá! Que bom que você veio ao nosso observatório, ele é
+        dedicado a você! Aqui podemos ver as melhores
+        imagens, de acordo com os olhos das pessoas konduters.
+        Bora aumentar esta coleção!
+      </h3>
+      <p>
+        konduter:
+        {' '}
+        {userEmail}
+      </p>
+      <section className="homePhotos">
+        { favorites && favorites.map((favorite, index) => (
+          <Card
+            className="homeCard"
+            style={ { width: '18rem' } }
+            key={ index }
+          >
+            <a
+              href={ favorite.imagePath }
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Card.Img variant="top" src={ favorite.imagePath } />
+            </a>
+            <Card.Body>
+              <Card.Title>
+                { favorite.rover }
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+              >
+                Câmera:
+                { favorite.camera }
+              </Card.Subtitle>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+              >
+                Adicionado aos favoritos em:
+                {' '}
+                { favorite.published }
+              </Card.Subtitle>
+              <Card.Text>
+                Pelos olhos de:
+                {' '}
+                { favorite.user.name }
+              </Card.Text>
+            </Card.Body>
+            <Button
+              variant="outline-secondary"
+            >
+              Remover dos favoritos
+            </Button>
+          </Card>
+        ))}
+      </section>
     </div>
   );
 }
