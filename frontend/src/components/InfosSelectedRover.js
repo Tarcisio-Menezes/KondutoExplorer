@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import MainContext from '../context/MainContext';
+import '../css/infosSelectedRover.css';
 
 function InfosSelectedRover() {
   const { dataRover, rover } = useContext(MainContext);
