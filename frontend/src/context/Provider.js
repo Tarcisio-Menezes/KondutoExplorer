@@ -9,6 +9,8 @@ const Provider = ({ children }) => {
   const [token, setToken] = useState('');
   const [rover, setRover] = useState('');
   const [dataRover, setDataRover] = useState('');
+  const [day, setDay] = useState(1);
+  const [page, setPage] = useState(1);
   const [favorites, setFavorites] = useState('');
 
   const context = {
@@ -26,6 +28,10 @@ const Provider = ({ children }) => {
     setRover,
     dataRover,
     setDataRover,
+    day,
+    setDay,
+    page,
+    setPage,
   };
 
   return (
