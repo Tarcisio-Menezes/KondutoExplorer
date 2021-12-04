@@ -111,7 +111,7 @@ function Favorites() {
 
   return (
     <div>
-      { listOfFavorites() }
+      { token ? listOfFavorites() : <h3>Konduter não autenticado</h3> }
     </div>
   );
 }
