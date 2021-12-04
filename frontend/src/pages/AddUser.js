@@ -80,12 +80,7 @@ function AddUser() {
           Cadastrar
         </button>
         <Link to="/">
-          <button
-            variant="light"
-            type="submit"
-          >
-            Voltar para Login
-          </button>
+          Voltar para Login
         </Link>
       </section>
     </div>
