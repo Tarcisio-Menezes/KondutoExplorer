@@ -1,6 +1,5 @@
 /* eslint-disable react/void-dom-elements-no-children */
 import React, { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import MainContext from '../context/MainContext';
 import { getDatesAndPhotos } from '../utils/requestAPI';
 import SelectRover from '../components/SelectRover';
@@ -22,9 +21,6 @@ function Home() {
 
   return (
     <div>
-      <Link to="/favorites">
-        Ver as melhores imagens pelos olhos dos Konduters
-      </Link>
       <SelectRover />
       <InfosSelectedRover />
       <ViewDatesAndPhotos />

@@ -2,8 +2,15 @@ import React, { useContext } from 'react';
 import MainContext from '../context/MainContext';
 
 function SelectRover() {
-  const { setRover } = useContext(MainContext);
-  return (
+  const { setRover, token } = useContext(MainContext);
+
+  if (!token) {
+    return (
+      <div>
+        <h3>Desculpe konduter, você não está autenticado em nosso sistema :(</h3>
+      </div>
+    );
+  } return (
     <section>
       <p>Selecione o um rover para explorar:</p>
       <div>
