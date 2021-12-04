@@ -122,7 +122,7 @@ function ViewDatesAndPhotos() {
               </Card.Body>
               <Button
                 variant="outline-secondary"
-                OnClick={ () => addInformationsToFavorites(
+                onClick={ () => addInformationsToFavorites(
                   photo.img_src,
                   photo.rover.name,
                   photo.camera.full_name,
