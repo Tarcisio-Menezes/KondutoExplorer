@@ -22,13 +22,12 @@ function Home() {
 
   return (
     <div>
-      Hello home
-      <SelectRover />
-      <InfosSelectedRover />
-      <ViewDatesAndPhotos />
       <Link to="/favorites">
         Ver as melhores imagens pelos olhos dos Konduters
       </Link>
+      <SelectRover />
+      <InfosSelectedRover />
+      <ViewDatesAndPhotos />
     </div>
   );
 }

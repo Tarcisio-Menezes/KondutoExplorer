@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button } from 'react-bootstrap';
@@ -24,7 +25,19 @@ function Favorites() {
         .catch((errorOrResponse) => console.log(errorOrResponse));
     }
     getFavorites();
-  }, [setFavorites, token]);
+  }, [setFavorites, token, favorites]);
+
+  const removeFromFavorites = (id) => {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      authorization: token,
+    };
+    axios.delete(`http://${host}:3003/favorite/${id}`, { headers })
+      .then((response) => response)
+      .catch((errorOrResponse) => alert(`Você pode remover apenas os seus favoritos!
+        ${errorOrResponse}`));
+  };
 
   return (
     <div>
@@ -79,6 +92,7 @@ function Favorites() {
             </Card.Body>
             <Button
               variant="outline-secondary"
+              onClick={ () => removeFromFavorites(favorite.id) }
             >
               Remover dos favoritos
             </Button>
