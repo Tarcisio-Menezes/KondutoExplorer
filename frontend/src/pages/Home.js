@@ -28,7 +28,7 @@ function Home() {
 
   const selectRover = () => (
     <section>
-      <p>Select a maintenance drone:</p>
+      <p>Selecione o um rover para explorar:</p>
       <div>
         <label htmlFor="curiosity">
           <input
@@ -72,12 +72,16 @@ function Home() {
     const { photos } = dataRover;
     if (dataRover) {
       const imagesIndDayOne = photos.length;
+      const maxPage = 25;
       return (
         <section>
-          <p>{`O rover ${rover} chegou em Marte em ${photos[0].earth_date}.`}</p>
+          <p>
+            {`O rover ${rover} chegou em Marte por volta de ${photos[0].earth_date}.`}
+          </p>
           <p>{`Seu status de atividade é ${photos[0].rover.status}!`}</p>
           <p>
-            {`Ele capturou ${imagesIndDayOne}
+            {`Ele capturou ${
+              imagesIndDayOne < maxPage ? '' : 'mais de'} ${imagesIndDayOne}
             imagens em seu primeiro dia no planeta vermelho!!`}
           </p>
         </section>
