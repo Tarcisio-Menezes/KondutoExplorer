@@ -6,11 +6,11 @@ import MainContext from '../context/MainContext';
 // import MainContext from '../context/MainContext';
 import { getDatesAndPhotos } from '../utils/requestAPI';
 import SelectRover from '../components/SelectRover';
+import InfosSelectedRover from '../components/InfosSelectedRover';
 
 function Home() {
   // const { userName, token, setFavorites } = useContext(MainContext);
-  const { rover } = useContext(MainContext);
-  const [dataRover, setDataRover] = useState('');
+  const { rover, dataRover, setDataRover } = useContext(MainContext);
   const [day, setDay] = useState(1);
   const [page, setPage] = useState(1);
 
@@ -31,27 +31,6 @@ function Home() {
     }
     getAllDataInSelectedDay();
   }, [day, page, rover]);
-
-  const infosSelectedRover = () => {
-    if (dataRover) {
-      const { photos } = dataRover;
-      const imagesIndDayOne = photos.length;
-      const maxPage = 25;
-      return (
-        <section>
-          <p>
-            {`O rover ${rover} chegou em Marte por volta de ${photos[0].earth_date}.`}
-          </p>
-          <p>{`Seu status de atividade é ${photos[0].rover.status}!`}</p>
-          <p>
-            {`Ele capturou ${
-              imagesIndDayOne < maxPage ? '' : 'mais de'} ${imagesIndDayOne}
-            imagens em seu primeiro dia no planeta vermelho!!`}
-          </p>
-        </section>
-      );
-    } return null;
-  };
 
   const viewDatesAndPhotos = () => {
     if (dataRover) {
@@ -90,7 +69,7 @@ function Home() {
     <div>
       Hello home
       <SelectRover />
-      { infosSelectedRover() }
+      <InfosSelectedRover />
       { viewDatesAndPhotos() }
     </div>
   );

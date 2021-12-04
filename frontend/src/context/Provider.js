@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [userPass, setUserPass] = useState('');
   const [token, setToken] = useState('');
   const [rover, setRover] = useState('');
+  const [dataRover, setDataRover] = useState('');
   const [favorites, setFavorites] = useState('');
 
   const context = {
@@ -23,6 +24,8 @@ const Provider = ({ children }) => {
     setUserEmail,
     rover,
     setRover,
+    dataRover,
+    setDataRover,
   };
 
   return (
