@@ -6,6 +6,7 @@ import SelectRover from '../components/SelectRover';
 import InfosSelectedRover from '../components/InfosSelectedRover';
 import ViewDatesAndPhotos from '../components/ViewDatesAndPhotos';
 import Nav from '../components/Nav';
+import '../css/home.css';
 
 function Home() {
   const { rover, day, page, setDataRover } = useContext(MainContext);
