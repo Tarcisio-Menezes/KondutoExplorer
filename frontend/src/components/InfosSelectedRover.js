@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import MainContext from '../context/MainContext';
 
 function InfosSelectedRover() {
-  const { dataRover } = useContext(MainContext);
-  if (dataRover.length > 0) {
+  const { dataRover, rover } = useContext(MainContext);
+  if (dataRover) {
     const { photos } = dataRover;
     const imagesIndDayOne = photos.length;
     const maxPage = 25;
     return (
-      <section>
+      <section className="preInfos">
         <p>
           {`O rover ${rover} chegou em Marte por volta de ${photos[0].earth_date}.`}
         </p>
