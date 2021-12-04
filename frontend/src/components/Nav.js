@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <section className="navigator">
+      <img
+        href="https://www.konduto.com/wp-content/uploads/2020/03/konduto-logotipo.png"
+        alt="Logo Konduto"
+      />
       <nav className="homeLink">
         <Link to="/">
           Home
