@@ -1,9 +1,60 @@
-import React, { useContext } from 'react';
-import { Form, Card } from 'react-bootstrap';
+/* eslint-disable no-alert */
+import React, { useContext, useState } from 'react';
+import axios from 'axios';
+import { Form, Card, Button } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 
+require('dotenv').config();
+
+const host = process.env.HOST || 'localhost';
+
 function ViewDatesAndPhotos() {
-  const { setDay, setPage, dataRover } = useContext(MainContext);
+  const { setDay, setPage, dataRover, token } = useContext(MainContext);
+  const [imagePath, setImagePath] = useState('');
+  const [rover, setRover] = useState('');
+  const [camera, setCamera] = useState('');
+  const [landing, setLanding] = useState('');
+  const [launch, setLaunch] = useState('');
+
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    authorization: token,
+  };
+
+  const addToFavorites = () => {
+    const body = {
+      imagePath,
+      rover,
+      camera,
+      landing,
+      launch,
+    };
+
+    axios.post(`http://${host}:3003/favorite`, body, { headers })
+      .then((response) => {
+        if (response.data) {
+          return alert(`Foto de ${rover} adicionada aos favoritos`);
+        }
+      })
+      .catch((errorOrResponse) => console.log(errorOrResponse));
+  };
+
+  const addInformationsToFavorites = async (
+    imgSrc,
+    roverName,
+    cameraFullName,
+    roverLandingDate,
+    roverLaunchDate,
+  // eslint-disable-next-line max-params
+  ) => {
+    setImagePath(imgSrc);
+    setRover(roverName);
+    setCamera(cameraFullName);
+    setLanding(roverLandingDate);
+    setLaunch(roverLaunchDate);
+    return addToFavorites();
+  };
 
   if (dataRover) {
     const { photos } = dataRover;
@@ -69,6 +120,18 @@ function ViewDatesAndPhotos() {
                   { photo.rover.status }
                 </Card.Text>
               </Card.Body>
+              <Button
+                variant="outline-secondary"
+                OnClick={ () => addInformationsToFavorites(
+                  photo.img_src,
+                  photo.rover.name,
+                  photo.camera.full_name,
+                  photo.rover.landing_date,
+                  photo.rover.launch_date,
+                ) }
+              >
+                Adicionar aos favoritos
+              </Button>
             </Card>
           ))}
         </section>
