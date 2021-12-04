@@ -5,11 +5,11 @@ function Nav() {
   return (
     <header className="navigator">
       <img
-        href="https://www.konduto.com/wp-content/uploads/2020/03/konduto-logotipo.png"
+        src="https://www.konduto.com/wp-content/uploads/2020/03/konduto-logotipo.png"
         alt="Logo Konduto"
       />
       <nav className="homeLink">
-        <Link to="/">
+        <Link to="/home">
           Home
         </Link>
       </nav>

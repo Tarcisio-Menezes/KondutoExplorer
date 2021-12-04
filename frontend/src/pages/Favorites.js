@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
+import Nav from '../components/Nav';
 
 require('dotenv').config();
 
@@ -41,6 +42,7 @@ function Favorites() {
 
   return (
     <div>
+      <Nav />
       <h1>Observatório Konduto</h1>
       <h3>
         Olá! Que bom que você veio ao nosso observatório, ele é
