@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Card, Button } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
 import Nav from '../components/Nav';
+import '../css/favorites.css';
 
 require('dotenv').config();
 
@@ -47,18 +48,20 @@ function Favorites() {
     return (
       <div>
         <Nav />
-        <h1>Observatório Konduto</h1>
-        <h3>
-          Olá! Que bom que você veio ao nosso observatório, ele é
-          dedicado a você! Aqui podemos ver as melhores
-          imagens, de acordo com os olhos das pessoas konduters.
-          Bora aumentar esta coleção!
-        </h3>
-        <p>
-          konduter:
-          {' '}
-          {userEmail}
-        </p>
+        <section className="favoritePageText">
+          <h1>Observatório Konduto</h1>
+          <h3>
+            Olá! Que bom que você veio ao nosso observatório, ele é
+            dedicado a você! Aqui podemos ver as melhores
+            imagens, de acordo com os olhos das pessoas konduters.
+            Bora aumentar esta coleção!
+          </h3>
+          <p>
+            konduter:
+            {' '}
+            {userEmail}
+          </p>
+        </section>
         <section className="homePhotos">
           { favorites && favorites.map((favorite, index) => (
             <Card
