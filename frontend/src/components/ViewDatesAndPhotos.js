@@ -75,13 +75,16 @@ function ViewDatesAndPhotos() {
           <Form.Label>Dia marciano:</Form.Label>
           <Form.Control
             type="number"
+            min="1"
+            step="1"
             placeholder="Digite o dia."
             onChange={ ({ target }) => setDay(target.value) }
           />
           <Form.Label>Navegue pelas páginas:</Form.Label>
           <Form.Control
             type="number"
-            min="0"
+            min="1"
+            max="4"
             step="1"
             placeholder="Página."
             onChange={ ({ target }) => setPage(target.value) }
