@@ -129,7 +129,7 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
 
 * Você pode excluir da galeria apenas os itens adicionados por você. Caso tente excluir um item adicionado por outro colaborador, um `alert` será emitido dizendo que está operação não é possível.
 
-* Altere entre as páginas `Home` e `Favoritos` sempre que quiser. Clique em `Desconectar` para se deslogar e ser redirecionado para a página de login.
+* Alterne entre as páginas `Home` e `Favoritos` sempre que quiser. Clique em `Desconectar` para se deslogar e ser redirecionado para a página de login.
 
 ---
 
