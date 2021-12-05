@@ -16,7 +16,7 @@ function SelectRover() {
     );
   } return (
     <section className="selectRover">
-      <h2>Selecione o um rover para explorar:</h2>
+      <h2>Selecione um rover para explorar:</h2>
       <div>
         <label htmlFor="curiosity">
           <input
