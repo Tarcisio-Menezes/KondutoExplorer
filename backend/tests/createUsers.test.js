@@ -1,14 +1,14 @@
 const frisby = require('frisby');
 const shell = require('shelljs');
 
-const url = process.env.URL;
+const url = 'http://localhost:3003';
 
 const image = 'https://tarcisio-menezes.github.io/portfolio/static/media/perfil.048135be.jpeg';
 
 describe('1 - A aplicação deve ter o endpoint POST `/user`', function () {
   beforeEach(function () {
     shell.exec('npx sequelize-cli db:drop');
-    shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate $');
+    shell.exec('npx sequelize-cli db:create && npx sequelize-cli db:migrate');
   });
 
   it('É possível cadastrar um usuário com sucesso', async function () {
