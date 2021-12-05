@@ -86,17 +86,15 @@ function Favorites() {
                   Câmera:
                   { favorite.camera }
                 </Card.Subtitle>
-                <Card.Subtitle
-                  className="mb-2 text-muted"
-                >
-                  Adicionado aos favoritos em:
-                  {' '}
-                  { favorite.published }
-                </Card.Subtitle>
                 <Card.Text>
                   Pelos olhos de:
                   {' '}
                   { favorite.user.name }
+                </Card.Text>
+                <Card.Text>
+                  Contato:
+                  {' '}
+                  { favorite.user.email }
                 </Card.Text>
               </Card.Body>
               <Button
