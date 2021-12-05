@@ -3,9 +3,9 @@ import MainContext from '../context/MainContext';
 import '../css/infosSelectedRover.css';
 
 function InfosSelectedRover() {
-  const { dataRover, rover, page } = useContext(MainContext);
+  const { dataRover, rover, page, day } = useContext(MainContext);
   const { photos } = dataRover;
-  if (photos && page === 1) {
+  if (photos && page === 1 && day === 1) {
     const imagesIndDayOne = photos.length;
     const maxPage = 25;
     return (
