@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Form, Card, Button } from 'react-bootstrap';
 import MainContext from '../context/MainContext';
+import '../css/viewDatesAndPhotos.css';
 
 require('dotenv').config();
 
@@ -59,23 +60,25 @@ function ViewDatesAndPhotos() {
   if (dataRover) {
     const { photos } = dataRover;
     return (
-      <div>
-        <h3>Konduter, agora vamos explorar ainda mais</h3>
+      <div className="searchHome">
+        <h3>Konduter, agora vamos explorar ainda mais!</h3>
         <p>
           Utilize os campos abaixo para fazer uma pesquisa combinada.
-          Digite um número inteiro que representará o dia em marte em
+          Digite um número inteiro que representará o dia em
           que deseja ver algumas imagens, contando a partir da data
-          em que o rover chegou. Dica: 1 representa o
-          primeiro dia do rover no planeta, 2 representa o segundo e assim por diante.
+          em que o rover chegou em marte. Dica: 1 representa o
+          primeiro dia do rover no planeta, 2 representa o segundo, e assim por diante.
+          As imagens podem demorar cerca de 6 segundos para serem renderizadas no card,
+          devido a alta resolução de captura da maioria delas! :)
         </p>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Dia marciano</Form.Label>
+        <Form.Group className="mb-3 formData" controlId="formBasicPassword">
+          <Form.Label>Dia marciano:</Form.Label>
           <Form.Control
             type="number"
             placeholder="Digite o dia."
             onChange={ ({ target }) => setDay(target.value) }
           />
-          <Form.Label>Navegue pelas páginas</Form.Label>
+          <Form.Label>Navegue pelas páginas:</Form.Label>
           <Form.Control
             type="number"
             min="0"
