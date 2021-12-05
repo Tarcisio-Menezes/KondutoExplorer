@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../css/nav.css';
 
 function Nav() {
   return (
     <header className="navigator">
-      <img
-        src="https://www.konduto.com/wp-content/uploads/2020/03/konduto-logotipo.png"
-        alt="Logo Konduto"
-      />
+      <h1>
+        Konduters Explorer
+      </h1>
       <nav className="homeLink">
         <Link to="/home">
           Home
