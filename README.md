@@ -65,7 +65,7 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
 4. Agora vamos iniciar o front:
   * Abra uma nova aba em seu terminal;
   * Volte um nível com `cd ..`
-  * Entre na pasta `frontEnd`
+  * Entre na pasta `frontend`
 
 
 5. Instale as dependências e inicialize a aplicação:
