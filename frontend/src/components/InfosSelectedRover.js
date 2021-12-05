@@ -3,8 +3,8 @@ import MainContext from '../context/MainContext';
 import '../css/infosSelectedRover.css';
 
 function InfosSelectedRover() {
-  const { dataRover, rover } = useContext(MainContext);
-  if (dataRover) {
+  const { dataRover, rover, day, page } = useContext(MainContext);
+  if (dataRover || !day || !page) {
     const { photos } = dataRover;
     const imagesIndDayOne = photos.length;
     const maxPage = 25;
