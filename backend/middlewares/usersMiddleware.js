@@ -1,5 +1,4 @@
-module.exports = (err, _req, res, _next) => {
-  console.log(err);
+module.exports = (err, _req, res, next) => {
   if (err.isJoi) return res.status(400).json({ message: err.details[0].message });
 
   if (err.code === 'conflict') {
@@ -13,5 +12,6 @@ module.exports = (err, _req, res, _next) => {
   if (err.code === 'invalidPass') {
     return res.status(400).json({ message: '"password" length must be 6 characters long' });
   }
-  return res.status(500).json({ message: 'Critcal Error :(' });
+  
+  return next(err);
 };
