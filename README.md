@@ -44,8 +44,13 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
   * No linux: `sudo systemctl start mysql.service`
     * Agora edite o arquivo `config.js`, em `/config` de acordo com as especificações de sua conexão com o MySQL.
     * Utilize variáveis de ambiente para tornar sua configuração mais segura.
+   
+3. Adicione um valor para a chave `JWT_SECRET`:
+  * Modifique o valor para a chave em `/backend/utils/validations.js` e `/backend/middlewares/authMiddleware`.
+  * Opte por variáveis de ambiente.
+  * Atenção: Você precisa editar um valor para esta chave para a aplicação funcionar corretamente.
 
-3. Instale as dependências e inicialize a aplicação:
+4. Instale as dependências e inicialize a aplicação:
   * Instale as dependências:
     * `npm install`.
   * Inicie a aplicação:
@@ -59,12 +64,12 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
     * O backend possui testes para as operações de criação de pessoa usuária e login.
       * Em `/backend` execute `npm test` para iniciar os testes com `jest`.
 
-4. Agora vamos iniciar o front:
+5. Agora vamos iniciar o front:
   * Abra uma nova aba em seu terminal;
   * Volte um nível com `cd ..`
   * Entre na pasta `frontend`
 
-5. Instale as dependências e inicialize a aplicação:
+6. Instale as dependências e inicialize a aplicação:
     * Instale as dependências:
       * `npm install`
     * Inicie a aplicação:
