@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do projeto Konduto Explorer!
 
-Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelho sem sair da casa. Ela conta com um sistema CRUD de gerenciamento de usuários e imagens favoritas. A pessoa colaboradora tem acesso a galeria com as melhores imagens de Marte, pelos olhos das pessoas konduters.
+Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelho sem sair de casa. Ela conta com um sistema CRUD de gerenciamento de usuários e imagens favoritas. A pessoa colaboradora tem acesso a galeria com as melhores imagens de Marte, pelos olhos das pessoas konduters.
 
 
 # Tecnologias de back-end
