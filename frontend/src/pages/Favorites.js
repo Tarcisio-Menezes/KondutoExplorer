@@ -49,15 +49,15 @@ function Favorites() {
       <div>
         <Nav />
         <section className="favoritePageText">
-          <h1>Observatório Konduto</h1>
+          <h1>Observatório</h1>
           <h3>
             Olá! Que bom que você veio ao nosso observatório, ele é
             dedicado a você! Aqui podemos ver as melhores
-            imagens, de acordo com os olhos das pessoas konduters.
+            imagens, de acordo com os olhos das pessoas colaboradoras.
             Bora aumentar esta coleção!
           </h3>
           <p>
-            konduter:
+            explorador conectado:
             {' '}
             {userEmail}
           </p>

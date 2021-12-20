@@ -44,8 +44,8 @@ function Login() {
   return (
     <div>
       <section className="titlesLogin">
-        <h1>Konduters Explorer</h1>
-        <h4>Login de pessoa colaboradora</h4>
+        <h1>Mars Explorer</h1>
+        <h4>Login de pessoa exploradora</h4>
       </section>
       <section className="dataLogin">
         <Form.Group className="mb-3" controlId="formBasicEmail">

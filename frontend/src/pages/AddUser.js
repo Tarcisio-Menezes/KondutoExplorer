@@ -43,7 +43,7 @@ function AddUser() {
   return (
     <div>
       <section className="createTitle">
-        <h1>Konduters Explorer</h1>
+        <h1>Mars Explorer</h1>
         <h4>Cadastrar nova pessoa exploradora</h4>
       </section>
       <section className="createData">

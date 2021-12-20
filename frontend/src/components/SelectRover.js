@@ -8,7 +8,7 @@ function SelectRover() {
   if (!token) {
     return (
       <div>
-        <h3>Desculpe konduter, você não está autenticado em nosso sistema :(</h3>
+        <h3>Desculpe, você não está autenticado em nosso sistema :(</h3>
         <Link to="/">
           <p>Venha fazer login!</p>
         </Link>

@@ -61,7 +61,7 @@ function ViewDatesAndPhotos() {
     const { photos } = dataRover;
     return (
       <div className="searchHome">
-        <h3>Konduter, agora vamos explorar ainda mais!</h3>
+        <h3>Agora vamos explorar ainda mais!</h3>
         <p>
           Utilize os campos abaixo para fazer uma pesquisa combinada.
           Digite um número inteiro que representará o dia em
@@ -143,7 +143,7 @@ function ViewDatesAndPhotos() {
         </section>
       </div>
     );
-  } return null;
+  } return rover && !dataRover ? <p>Carregando...</p> : null;
 }
 
 export default ViewDatesAndPhotos;

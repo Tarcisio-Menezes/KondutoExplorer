@@ -6,7 +6,7 @@ function Nav() {
   return (
     <header className="navigator">
       <h1>
-        Konduters Explorer
+        Mars Explorer
       </h1>
       <nav className="homeLink">
         <Link to="/home">
