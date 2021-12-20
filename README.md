@@ -1,6 +1,6 @@
-# Boas vindas ao repositório do projeto Konduto Explorer!
+# Boas vindas ao repositório do projeto Mars Explorer!
 
-Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelho sem sair de casa. Ela conta com um sistema CRUD de gerenciamento de usuários e imagens favoritas. A pessoa colaboradora tem acesso a galeria com as melhores imagens de Marte, pelos olhos das pessoas konduters.
+Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelho sem sair de casa. Ela conta com um sistema CRUD de gerenciamento de usuários e imagens favoritas. A pessoa colaboradora tem acesso a galeria com as melhores imagens de Marte, pelos olhos de todas as pessoas usuárias.
 
 
 # Tecnologias de back-end
@@ -36,7 +36,7 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
 ## Para executar a aplicação:
 
 1. Clone o repositório:
-  * `git clone git@github.com:Tarcisio-Menezes/KondutoExplorer.git`
+  * `git clone git@github.com:Tarcisio-Menezes/MarsExplorer.git`
   * Utilizando o terminal, entre na pasta do repositório que você acabou de clonar.
   * Entre na pasta `backend`.
 
@@ -79,15 +79,15 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
 
 ## Observações técnicas
 
- * Se você não possuir o `npm` instalado em sua máquina:
-   * Faça o download [aqui](https://www.npmjs.com/package/download)
+ * Se você não possuir o `node` instalado em sua máquina:
+   * Faça o download [aqui](https://nodejs.org/pt-br/download/)
 
  * Se você não possuir o `MySQL` instalado em sua máquina:
    * Faça o download [aqui](https://www.mysql.com/downloads/)
 
 ## Como usar a aplicação:
 
-* Konduto Explorer foi projetado para telas convencionais de computadores.
+* Mars Explorer foi projetado para telas convencionais de computadores.
 
 * A aplicação irá iniciar na página de login principal.
   * Novos usuários devem clicar no link `Crie seu usuário aqui`.
@@ -109,7 +109,7 @@ Esta é uma aplicação full-stack que proporciona uma viagem ao planeta vermelh
 
 * Você deve escolher um `rover` para explorar. Esta opção pode ser alterada a qualquer momento.
 
-* Após a seleção uma caixa de texto com as cores da Konduto exibirá algumas informações sobre o primeiro dia no planeta vermelho do rover escolhido.
+* Após a seleção uma caixa de texto exibirá algumas informações sobre o primeiro dia no planeta vermelho do rover escolhido.
 
 * Logo abaixo os campos `Dia marciano` e `Navegue pelas páginas` serão exibidos. Em `Dia Marciano` você pode escolher um dia, a contar pela chegada do rover ao planeta, para exibir cards de fotos. Em `Navegue pelas páginas`, você pode alternar entre as páginas de imagens disponíveis.
 
